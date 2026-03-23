@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <title>CodePrint | Elegant Code to PDF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+
+<div class="wrap">
+
+    <header>
+        <div class="brand">
+            <div class="brand-icon">⌨️</div>
+            <h1>CodePrint <em>→ PDF</em></h1>
+        </div>
+        <div class="theme-switcher">
+            <button class="theme-btn active" id="btnDark">🌙 Dark</button>
+            <button class="theme-btn" id="btnLight">☀️ Light</button>
+            <button class="theme-btn" id="btnDracula">🧛 Dracula</button>
+            <button class="theme-btn" id="btnMocha">☕ Mocha</button>
+            <button class="theme-btn" id="btnNordic">❄️ Nordic</button>
+        </div>
+    </header>
+
+    <div class="card" id="inputCard">
+        <div class="card-bar">
+            <div class="card-label">
+                <div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div>
+                Paste Your Code
+            </div>
+        </div>
+
+        <div class="opts">
+            <div class="opt-group">
+                <span class="opt-label">Language</span>
+                <select id="langSel">
+                    <option value="javascript">JavaScript</option><option value="typescript">TypeScript</option><option value="python">Python</option>
+                    <option value="cpp">C++</option><option value="c">C</option><option value="java">Java</option><option value="csharp">C#</option>
+                    <option value="rust">Rust</option><option value="go">Go</option><option value="html">HTML</option><option value="css">CSS</option>
+                    <option value="kotlin">Kotlin</option><option value="swift">Swift</option><option value="ruby">Ruby</option><option value="php">PHP</option>
+                    <option value="bash">Bash</option><option value="sql">SQL</option><option value="json">JSON</option>
+                </select>
+            </div>
+            <div class="opt-group">
+                <span class="opt-label">Filename</span>
+                <input type="text" class="text-input" id="filenameIn" value="my-code" style="width:130px"/>
+            </div>
+            <div class="opt-group">
+                <span class="opt-label">Title</span>
+                <input type="text" class="text-input" id="titleIn" value="Code Listing" style="width:160px"/>
+            </div>
+            <div class="opt-group">
+                <span class="opt-label">PDF Theme</span>
+                <select id="printThemeSel">
+                    <option value="match">Match App</option>
+                    <option value="dark">VS Code Dark</option>
+                    <option value="light">VS Code Light</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="mocha">Mocha</option>
+                    <option value="nordic">Nordic</option>
+                </select>
+            </div>
+            <label class="cb-wrap"><input type="checkbox" id="lineNumsCb" checked/> Line numbers</label>
+            <label class="cb-wrap"><input type="checkbox" id="showHeaderCb" checked/> Show header</label>
+        </div>
+
+        <textarea id="codeInput" spellcheck="false" placeholder="// Paste your code here…"></textarea>
+
+        <div class="actions">
+            <div class="status" id="status"></div>
+            <button class="btn btn-ghost" id="previewBtn">👁 Preview</button>
+            <button class="btn btn-primary" id="exportPdfBtn">🖨 Export PDF</button>
+        </div>
+    </div>
+
+    <div class="card" id="previewPanel">
+        <div class="card-bar">
+            <div class="card-label">🔍 Highlighted Preview — this is exactly what prints</div>
+            <button class="btn btn-ghost" id="closePreviewBtn" style="padding:6px 14px;font-size:.78rem">✕ Close</button>
+        </div>
+        <div id="previewContent"></div>
+    </div>
+
+</div>
+<footer>CodePrint · syntax-aware, client-side · nothing leaves your browser</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
